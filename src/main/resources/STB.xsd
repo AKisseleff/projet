@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://univ.fr/stb" xmlns:tns="http://univ.fr/stb">
+
+	<xs:simpleType name="Prio">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1" />
+			<xs:maxInclusive value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="Personne">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="Nom" type="xs:string" />
+				<xs:element name="gender" type="xs:boolean" />
+				<xs:element name="Prenom" type="xs:string" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ExigenceFonctionnelle">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifiant" type="xs:string" />
+				<xs:element name="Description" type="xs:string" />
+				<xs:element name="Priorite" type="xs:positiveInteger" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="STB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Id" type="xs:positiveInteger" />
+				<xs:element name="Titre" type="xs:string" />
+				<xs:element name="Version" type="xs:string" />
+				<xs:element name="Date" type="xs:date" />
+				<xs:element name="Description" type="xs:string" />
+
+				<xs:element name="Client">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Entite" type="xs:string" />
+							<xs:element name="Contact" type="xs:string" />
+							<xs:element name="CodePostal" type="xs:positiveInteger" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="Equipe">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="tns:Personne" minOccurs="2"
+								maxOccurs="7" />
+						</xs:sequence>
+
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="Fonctionnalite" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Description" type="xs:string" />
+							<xs:element ref="tns:ExigenceFonctionnelle" maxOccurs="unbounded"
+								minOccurs="2" />
+						</xs:sequence>
+						<xs:attribute name="Priorite" type="tns:Prio" />
+					</xs:complexType>
+				</xs:element>
+
+				<xs:element name="Commentaire" type="xs:string"
+					minOccurs="0" />
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="ListSTB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:STB" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

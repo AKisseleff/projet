@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ListSTB xmlns:tns="http://univ.fr/stb"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://univ.fr/stb STB.xsd ">
+	<tns:STB>
+		<Id>1</Id>
+		<Titre>Tir au panier</Titre>
+		<Version>1.5</Version>
+		<Date>2007-02-10</Date>
+		<Description>Jeux de basker pour IOS et android</Description>
+		<Client>
+			<Entite>EA</Entite>
+			<Contact>Max Brooks</Contact>
+			<CodePostal>46230</CodePostal>
+		</Client>
+		<Equipe>
+			<tns:Personne>
+				<Nom>Jean</Nom>
+				<gender>true</gender>
+				<Prenom>Patrick</Prenom>
+			</tns:Personne>
+			<tns:Personne>
+				<Nom>Dupont</Nom>
+				<gender>false</gender>
+				<Prenom>Annick</Prenom>
+			</tns:Personne>
+			<tns:Personne>
+				<Nom>Grenier</Nom>
+				<gender>true</gender>
+				<Prenom>Maxime</Prenom>
+			</tns:Personne>
+		</Equipe>
+		<Fonctionnalite Priorite="1">
+			<Description>Pouvoir jouer en ligne</Description>
+			<tns:ExigenceFonctionnelle>
+				<Identifiant>A001</Identifiant>
+				<Description>Le lag ne doit pas dépasser 2s </Description>
+				<Priorite>8</Priorite>
+			</tns:ExigenceFonctionnelle>
+			<tns:ExigenceFonctionnelle>
+				<Identifiant>A002</Identifiant>
+				<Description>Le temps de recherche d'une partie ne doit pas dépasser une minute</Description>
+				<Priorite>7</Priorite>
+			</tns:ExigenceFonctionnelle>
+		</Fonctionnalite>
+		<Fonctionnalite Priorite="5">
+			<Description>Le joueur peut personnaliser son jeu</Description>
+			<tns:ExigenceFonctionnelle>
+				<Identifiant>C250</Identifiant>
+				<Description>L'utilisateur peut définir le physique de tous ses joueurs </Description>
+				<Priorite>8</Priorite>
+			</tns:ExigenceFonctionnelle>
+			<tns:ExigenceFonctionnelle>
+				<Identifiant>C681</Identifiant>
+				<Description>L'utilisateur peut choisir les couleurs de maillots</Description>
+				<Priorite>6</Priorite>
+			</tns:ExigenceFonctionnelle>
+		</Fonctionnalite>
+		<Commentaire>Il est aussi possible de jouer localement contre une IA.</Commentaire>
+	</tns:STB>
+	<tns:STB>
+		<Id>2</Id>
+		<Titre>Rugby Pari</Titre>
+		<Version>6.5</Version>
+		<Date>2006-05-26</Date>
+		<Description>Site de pari sportif pour le rugby</Description>
+		<Client>
+			<Entite>ABCD Corp.</Entite>
+			<Contact>Jean Bak</Contact>
+			<CodePostal>89230</CodePostal>
+		</Client>
+		<Equipe>
+			<tns:Personne>
+				<Nom>Marc</Nom>
+				<gender>true</gender>
+				<Prenom>Marcel</Prenom>
+			</tns:Personne>
+			<tns:Personne>
+				<Nom>Albert</Nom>
+				<gender>false</gender>
+				<Prenom>Louise</Prenom>
+			</tns:Personne>
+		</Equipe>
+		<Fonctionnalite Priorite="1">
+			<Description>L'utilisateur doit pouvoir, pendant le match, parier sur le prochain joueur a marquer un essai </Description>
+			<tns:ExigenceFonctionnelle>
+				<Identifiant>AUJ4</Identifiant>
+				<Description>Les changements de joeur doivent être actualisé dans l'application en moins de 30s.</Description>
+				<Priorite>9</Priorite>
+			</tns:ExigenceFonctionnelle>
+			<tns:ExigenceFonctionnelle>
+				<Identifiant>AUJ7</Identifiant>
+				<Description>L'application doit prendre en compte les cartons.</Description>
+				<Priorite>2</Priorite>
+			</tns:ExigenceFonctionnelle>
+		</Fonctionnalite>
+	</tns:STB>
+</tns:ListSTB>
